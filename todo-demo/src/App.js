@@ -90,7 +90,7 @@ function App() {
                     <input type="checkbox" id="done-btn" defaultChecked name="done-btn" value={task} disabled/>
                       {/* <button id="done-btn" onClick={() => {}} disabled>Done</button> */}
                     </td>
-                    <td id="task-detail">{task}</td>
+                    <td id="task-detail"><s>{task}</s></td>
                     <td><button onClick={() => {remove(task)}}>Remove</button></td>
                   </tr>
                   )
