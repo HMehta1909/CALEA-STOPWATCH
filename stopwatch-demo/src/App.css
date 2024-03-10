@@ -14,6 +14,25 @@
   margin: auto;
 }
 
+#btn-play{
+  padding: 5px;
+  color: white;
+  background-color: blue;
+  border: none;
+}
+
+
+#btn-lap{
+  color: white;
+  background-color: rgb(74, 6, 158);
+  border: none;
+}
+
+#btn-clear{
+  color: white;
+  background-color: red;
+  border: none;
+}
 
 #laps {
   display: flex;

@@ -35,7 +35,7 @@ function App() {
       <h1>Stopwatch</h1>
       <h2><TimerText count={count}/></h2>
       <div id="buttons">
-      <button onClick={()=>  
+      <button id="btn-play" onClick={()=>  
         {if(isStopped==="Play"){
           setIsStopped("Pause");
           setCount((count) =>count+1);
@@ -48,12 +48,12 @@ function App() {
         }}
         }>  {isStopped} </button>
 
-      <button onClick={() => {
+      <button id="btn-lap" onClick={() => {
         const updatedLaps = [...laps, count];
         setLaps(updatedLaps);
       }}>Lap </button>
 
-        <button onClick={()=>{
+        <button id="btn-clear" onClick={()=>{
           setLaps([]);
           setCount(0);
         }} >Clear</button>
