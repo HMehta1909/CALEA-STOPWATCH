@@ -60,7 +60,7 @@ function App() {
       <audio id="clockSound" src="./clock-ticking2.wav" loop ></audio>
         
     </div>
-    <img alt="hi"src="./logo192.png" />
+    
       <table id="laps-table">
         <thead>
             <tr>
