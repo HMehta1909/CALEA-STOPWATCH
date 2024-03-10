@@ -1,0 +1,12 @@
+table, th, td{
+    text-align: center;
+    vertical-align: middle;
+    border-collapse: collapse;
+    border: 1px solid;
+}
+table{
+    width: 100%;
+}
+th{
+    font-size: large;
+}

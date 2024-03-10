@@ -1,9 +1,11 @@
 // photo-list-display.js
 import React from 'react';
-
+import './photo-list-display.css'
 const DisplayPhotos = ({ photoList }) => {
   return (
-    <table>
+    <>
+    <h2>Data Display of 15000 Rows</h2>
+    <table id="data">
       <thead>
         <tr>
           <th>Album ID</th>
@@ -20,11 +22,13 @@ const DisplayPhotos = ({ photoList }) => {
             <td>{photo.id}</td>
             <td>{photo.title}</td>
             <td>{photo.url}</td>
-            <td><img src= {photo.thumbnailUrl} width="20px" height={"20px"}/></td>
+            <td><img src= {photo.thumbnailUrl} width="20px" height="20px"/></td>
           </tr>
         ))}
       </tbody>
     </table>
+    </>
+    
   );
 };
 

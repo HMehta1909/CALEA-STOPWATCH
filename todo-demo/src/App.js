@@ -37,8 +37,9 @@ function App() {
     <div className="card">
     <form onSubmit={(e)=>{e.preventDefault();add(document.getElementById('task').value);}}>
     <div>
+    <h2>To-Do Planner</h2>
     <label name= "task-label">Task: </label>
-    <input type="text" name="task" id='task' plasholder="task here..." />
+    <input type="text" name="task" id='task' />
     </div>
     <button type="submit" >Add Task</button>
     </form>
@@ -58,7 +59,7 @@ function App() {
                   return(
                     
                     <tr key={task}>
-                    <td>
+                    <td id='chkbox'>
                       <input type="checkbox" id="done-btn" name="done-btn" onClick={() => complete(task)} value={task}/>
                       {/* <button id="done-btn" onClick={() => complete(task)}>Done</button> */}
                     </td>
@@ -86,7 +87,7 @@ function App() {
                   (task)=>{
                   return(
                     <tr key={task}>
-                    <td>
+                    <td id='chkbox'>
                     <input type="checkbox" id="done-btn" defaultChecked name="done-btn" value={task} disabled/>
                       {/* <button id="done-btn" onClick={() => {}} disabled>Done</button> */}
                     </td>
