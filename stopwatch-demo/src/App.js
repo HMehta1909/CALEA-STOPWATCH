@@ -3,6 +3,7 @@ import TimerText from './timer/timer-text'
 import './App.css';
 import { useEffect, useState } from 'react';
 
+
 function App() {
   const [count, setCount] = useState(0);
   const [isStopped, setIsStopped] = useState("Play");
@@ -31,28 +32,35 @@ function App() {
 
   return (
     <div className="App">
-      <TimerText count={count}/>
+      <h1>Stopwatch</h1>
+      <h2><TimerText count={count}/></h2>
+      <div id="buttons">
       <button onClick={()=>  
-      {if(isStopped==="Play"){
-        setIsStopped("Pause");
-        setCount((count) =>count+1);
-      }
-      else{
-        setIsStopped("Play");
+        {if(isStopped==="Play"){
+          setIsStopped("Pause");
+          setCount((count) =>count+1);
+          document.getElementById('clockSound').play();
+        }
+        else{
+          setIsStopped("Play");
+          document.getElementById('clockSound').pause();
+          
+        }}
+        }>  {isStopped} </button>
+
+      <button onClick={() => {
+        const updatedLaps = [...laps, count];
+        setLaps(updatedLaps);
+      }}>Lap </button>
+
+        <button onClick={()=>{
+          setLaps([]);
+          setCount(0);
+        }} >Clear</button>
+      <audio id="clockSound" src="./clock-ticking2.wav" loop ></audio>
         
-      }}
-      }>  {isStopped} </button>
-
-    <button onClick={() => {
-      const updatedLaps = [...laps, count];
-      setLaps(updatedLaps);
-    }}>Lap </button>
-
-      <button onClick={()=>{
-        setLaps([]);
-        setCount(0);
-      }} >Clear</button>
-      
+    </div>
+    <img alt="hi"src="./logo192.png" />
       <table id="laps-table">
         <thead>
             <tr>

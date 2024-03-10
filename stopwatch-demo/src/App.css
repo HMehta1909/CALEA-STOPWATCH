@@ -5,6 +5,15 @@
   align-items: center; /* Center vertically */
   text-align: center;
 }
+#buttons {
+  
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 90%;
+  margin: auto;
+}
+
 
 #laps {
   display: flex;
@@ -13,14 +22,21 @@
   width: max-content;
 }
 
+h1{
+margin:  0;
+}
+h2{
+  margin:  0.5%;
+  }
 
 .App {
-  
+  padding: 3%;
   text-align: center;
   background-color: rgb(245, 244, 244);
   width: max-content;
   margin: auto;
-  margin-top: 2%;
+  margin-top: 3%;
+  align-items: center;
   
 }
 
