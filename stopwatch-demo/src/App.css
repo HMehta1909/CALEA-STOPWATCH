@@ -53,6 +53,7 @@ h2 {
 }
 
 .App {
+  border-radius: 7%;
   padding: 3%;
   padding-top: 1.5%;
   text-align: center;

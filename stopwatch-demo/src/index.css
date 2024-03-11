@@ -7,7 +7,11 @@ body {
   -moz-osx-font-smoothing: grayscale;
 
   background-image: linear-gradient(270deg, #4b63bc, #10039e, #070054);
-
+  /* background-image: url(../public/MBStar.svg);
+  background-repeat: no-repeat;
+  background-size: 50%;
+  background-position-x: 50%;
+  background-position-y: 100; */
 }
 
 code {
