@@ -5,23 +5,17 @@ function App() {
   const [pendingTasks, setPendingTasks] = useState([]);
   const [completedTasks, setcompletedTasks] = useState([]);
   const add = (value) => {
-    const updatedTaskList = [...pendingTasks, value];
-    setPendingTasks(updatedTaskList);
+    setPendingTasks(prev => [...prev, task]);
     document.getElementById("task").value = "";
   };
   const complete = (task) => {
-    const updatedTaskList = [...completedTasks, task];
-    setcompletedTasks(updatedTaskList);
-    setPendingTasks(pendingTasks.filter((t) => t !== task));
+    setcompletedTasks(prev => [...prev, task]);
+    setPendingTasks(prev => prev.filter((t) => t !== task));
   };
   const remove = (task) => {
-    setcompletedTasks(completedTasks.filter((t) => t !== task));
-    setPendingTasks(pendingTasks.filter((t) => t !== task));
+    setcompletedTasks(prev => prev.filter((t) => t !== task));
+    setPendingTasks(prev => prev.filter((t) => t !== task));
   };
-
-  useEffect(() => {
-    console.log("Re-rendered");
-  }, [pendingTasks, completedTasks]);
 
   return (
     <div className="card">

@@ -15,6 +15,12 @@ function App() {
     }
   }
 
+  async function counting() {
+    while (true) {
+      console.log(count)
+    }
+  }
+
   useEffect(
     () => {
       if (playButton === "Pause") {
@@ -35,6 +41,7 @@ function App() {
             setPlayButton("Pause");
             setCount((count) => count + 1);
             document.getElementById('clockSound').play();
+            counting();
           }
           else {
             setPlayButton("Play");

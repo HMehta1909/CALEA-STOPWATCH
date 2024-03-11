@@ -7,8 +7,8 @@ function App() {
   const [photoList, setPhotoList] = useState([]);
   const getPhotoList = async () => {
     try {
-      const response = await axios.get("https://jsonplaceholder.typicode.com/photos");
-      setPhotoList([...response.data, ...response.data, ...response.data]);
+      const response = await axios.get("https://jsonplaceholder.typicode.com/photos");//5000
+      setPhotoList([...response.data, ...response.data, ...response.data]);//15000
     } catch (error) {
       console.error('Error fetching photo list:', error);
     }
