@@ -6,6 +6,7 @@ import { Button } from '@mui/material'
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import ClearIcon from '@mui/icons-material/Clear';
 import PauseIcon from '@mui/icons-material/Pause';
+import Navbar from './navbar/navbar';
 
 function App() {
   const [count, setCount] = useState(0);
@@ -17,6 +18,7 @@ function App() {
     while (currentTime + miliseconds >= new Date().getTime()) {
     }
   }
+
   // function counting() {
   //   console.log(count)
   //   if (playButton === "Pause") {
@@ -25,7 +27,7 @@ function App() {
   //   else {
   //   }
   // }
-
+  const drawerWidth = 230;
   useEffect(
     () => {
       if (playButton === "Pause") {
@@ -36,6 +38,7 @@ function App() {
 
   return (
     <div className="App">
+      <Navbar />
       <h1>Stopwatch</h1>
       <h2><TimerText count={count} /></h2>
       {/* <h2><TimerText count={count} onChange={counting()} /></h2> */}
