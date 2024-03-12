@@ -2,7 +2,10 @@
 import TimerText from './timer/timer-text'
 import './App.css';
 import { useEffect, useState } from 'react';
-
+import { Button } from '@mui/material'
+import PlayArrowIcon from '@mui/icons-material/PlayArrow';
+import ClearIcon from '@mui/icons-material/Clear';
+import PauseIcon from '@mui/icons-material/Pause';
 
 function App() {
   const [count, setCount] = useState(0);
@@ -14,12 +17,14 @@ function App() {
     while (currentTime + miliseconds >= new Date().getTime()) {
     }
   }
-
-  async function counting() {
-    while (true) {
-      console.log(count)
-    }
-  }
+  // function counting() {
+  //   console.log(count)
+  //   if (playButton === "Pause") {
+  //     setCount((count) => count + 1);
+  //   }
+  //   else {
+  //   }
+  // }
 
   useEffect(
     () => {
@@ -27,40 +32,37 @@ function App() {
         setCount((count) => count + 1);
         sleep(1000);
       }
-    },
-    [count])
+    }, [playButton, count])
 
   return (
     <div className="App">
       <h1>Stopwatch</h1>
       <h2><TimerText count={count} /></h2>
-
+      {/* <h2><TimerText count={count} onChange={counting()} /></h2> */}
       <div id="buttons">
-        <button id="btn-play" onClick={() => {
+        <Button variant="contained" color="primary" size='small' onClick={() => {
           if (playButton === "Play") {
             setPlayButton("Pause");
             setCount((count) => count + 1);
             document.getElementById('clockSound').play();
-            counting();
           }
           else {
             setPlayButton("Play");
             document.getElementById('clockSound').pause();
           }
-        }}>  {playButton} </button>
+        }}> {playButton === "Play" ? <PlayArrowIcon /> : <PauseIcon />} </Button>
 
-        <button id="btn-lap" onClick={() => {
+        < Button variant="contained" color='secondary' size='small' onClick={() => {
           const updatedLaps = [...laps, count];
           setLaps(updatedLaps);
-        }}>Lap </button>
+        }}>Lap</Button>
 
-        <button id="btn-clear" onClick={() => {
+        < Button variant="contained" color='error' startIcon={<ClearIcon />} size='small' onClick={() => {
           setLaps([]);
           setCount(0);
-        }}>Clear</button>
+        }}>Clear</Button>
         <audio id="clockSound" src="./clock-ticking2.wav" loop ></audio>
       </div>
-
       <table id="laps-table">
         <thead>
           <tr>
@@ -82,7 +84,6 @@ function App() {
           }
         </tbody>
       </table>
-
     </div>
 
   );
